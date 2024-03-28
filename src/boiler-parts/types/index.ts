@@ -109,6 +109,7 @@ export class GetByNameRequest {
 }
 
 export class FindOneResponse extends BoilerParts {}
+
 export interface IBoilerPartsQuery {
   limit: string;
   offset: string;

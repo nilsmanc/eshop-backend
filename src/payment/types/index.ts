@@ -13,7 +13,7 @@ export class MakePaymentResponse {
     currency: string;
   };
 
-  @ApiProperty({ example: 'Order №1' })
+  @ApiProperty({ example: 'Заказ №1' })
   description: string;
 
   @ApiProperty({

@@ -6,7 +6,7 @@ export class MakePaymentDto {
   @IsNotEmpty()
   readonly amount: number;
 
-  @ApiProperty({ example: 'order №1' })
+  @ApiProperty({ example: 'заказ №1' })
   @IsOptional()
   readonly description?: string;
 }
