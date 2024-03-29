@@ -1,9 +1,9 @@
 import * as session from 'express-session';
 import * as passport from 'passport';
-
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { DocumentBuilder } from '@nestjs/swagger';
+import { SwaggerModule } from '@nestjs/swagger/dist';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -17,8 +17,13 @@ async function bootstrap() {
   app.use(passport.initialize());
   app.use(passport.session());
 
+  app.enableCors({
+    credentials: true,
+    origin: ['http://localhost:3001'],
+  });
+
   const config = new DocumentBuilder()
-    .setTitle('Eshop')
+    .setTitle('Аква термикс')
     .setDescription('api documentation')
     .setVersion('1.0')
     .addTag('api')
